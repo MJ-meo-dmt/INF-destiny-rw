@@ -30,7 +30,7 @@
 # Setup logging
 import logging
 
-logging.basicConfig(filename='logs/client.log',level=logging.DEBUG,
+logging.basicConfig(filename=LOGDIR+'client.log',level=logging.DEBUG,
                         format='%(asctime)s: %(message)s')
 ## LOGGING Guide:
 #
