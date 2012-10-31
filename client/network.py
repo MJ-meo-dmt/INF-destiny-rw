@@ -27,10 +27,13 @@
 ########################################################################
 #----------------------------------------------------------------------#
 
+# Load config
+from config import *
+
 # Setup logging
 import logging
 
-logging.basicConfig(filename='logs/network.log',level=logging.DEBUG,
+logging.basicConfig(filename=LOGDIR+'network.log',level=logging.DEBUG,
                         format='%(asctime)s: %(message)s')
 ## LOGGING Guide:
 #
@@ -56,7 +59,6 @@ from direct.showbase.DirectObject import DirectObject
 
 
 # Client Imports
-from config import *
 from handlers import Handler
 from handlers import GameHandler
 from client_opcodes import *

@@ -26,12 +26,14 @@
 #
 ########################################################################
 #----------------------------------------------------------------------#
-# LICENSE goes here:
+
+# Load config
+from config import *
 
 # Setup logging
 import logging
 
-logging.basicConfig(filename='logs/database.log',level=logging.DEBUG,
+logging.basicConfig(filename=LOGDIR+'database.log',level=logging.DEBUG,
                         format='%(asctime)s: %(message)s')
 ## LOGGING Guide:
 #
@@ -45,7 +47,6 @@ logging.basicConfig(filename='logs/database.log',level=logging.DEBUG,
 
 import os
 import sys
-from config import *
 from sqlite3 import dbapi2 as sqlite
 
 ########################################################################

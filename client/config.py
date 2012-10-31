@@ -49,6 +49,8 @@ BACKWARD = config.get('CONTROLS', 'backward')
 SIDE_L = config.get('CONTROLS', 'side_l')
 SIDE_R = config.get('CONTROLS', 'side_r')
 
+# LOG DIR #
+LOGDIR = "logs/"
 
 
 

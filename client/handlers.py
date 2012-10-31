@@ -27,11 +27,13 @@
 ########################################################################
 #----------------------------------------------------------------------#
 
+# Load config
+from config import *
 
 # Setup logging
 import logging
 
-logging.basicConfig(filename='logs/handlers.log',level=logging.DEBUG,
+logging.basicConfig(filename=LOGDIR+'handlers.log',level=logging.DEBUG,
                         format='%(asctime)s: %(message)s')
 ## LOGGING Guide:
 #

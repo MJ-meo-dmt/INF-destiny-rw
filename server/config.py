@@ -47,4 +47,8 @@ udpPORT = config.getint('Connection', 'udpport')
 # SERVER DB CONFIG #
 ACC_DB = config.get('Database', 'acc_db')
 
+# LOG DIR #
+LOGDIR = "logs/"
+
+
 

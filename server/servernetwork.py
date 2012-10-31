@@ -27,11 +27,19 @@
 ########################################################################
 #----------------------------------------------------------------------#
 
-
 # Setup logging
 import logging
 
-logging.basicConfig(filename='logs/network.log',level=logging.DEBUG,
+# Server Network config file load.
+logging.info('Loading Server cfg')
+try:
+    from config import *
+    logging.info('Server cfg: Loaded')
+except:
+    print "Error while trying to load Server cfg-file!"
+    logging.warning('Server cfg load error, check config file!')
+
+logging.basicConfig(filename=LOGDIR+'network.log',level=logging.DEBUG,
                         format='%(asctime)s: %(message)s')
 ## LOGGING Guide:
 #
@@ -44,16 +52,6 @@ logging.basicConfig(filename='logs/network.log',level=logging.DEBUG,
 ## IMPORTS ##
 import os
 import sys
-
-# Server Network config file load.
-logging.info('Loading Server cfg')
-try:
-    from config import *
-    logging.info('Server cfg: Loaded')
-except:
-    print "Error while trying to load Server cfg-file!"
-    logging.warning('Server cfg load error, check config file!')
-
 
 ### PANDA Imports ###
 from pandac.PandaModules import *
