@@ -66,9 +66,9 @@ from pandac.PandaModules import *
 from direct.task.Task import Task
 from direct.showbase.DirectObject import DirectObject
 
-
 # Client Imports
 from network import Network
+from gui import Gui
 
 
 
@@ -95,6 +95,7 @@ class Game(ShowBase):
 		self.accept('escape', self.quit)
 		
 		# Start login screen
+		self.gui = Gui(self)
 		
 		# Start Network
 		self.NetworkBase = Network(self)

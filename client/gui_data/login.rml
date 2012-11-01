@@ -1,0 +1,47 @@
+<rml>
+	<head>
+		<link type="text/rcss" href="art.rcss"/>
+		
+		
+
+<title>Login Screen</title>
+
+
+	<script>
+def Log():
+	
+	user = document.GetElementById('username')
+	passw = document.GetElementById('password')
+	messenger.send('Login_attempt', [user.value, passw.value])
+
+	</script>
+
+</head>
+
+<body>
+	
+	
+	
+	<div class="box">
+			<!-- The <handle> #document </handle> -->
+			
+			<div class="inputUser"><input name="Username" id="username" value="" style="margin-left:6px; position:absolute; margin-top:4px;" type="text" width="136px" height="25px" size="14" autofocus="autofocus"/></div>
+			<div class="inputPass"><input name="Password" id="password" value="" style="margin-left:6px; position:absolute; margin-top:4px;" type="password" width="136px" height="25px" size="14" /></div>
+			<div class="btn1" onclick="exit()"></div>
+			<div class="btn2" onclick="Log()"></div>
+	</div>
+	
+	<div class="Statusbox" >
+		<p id="error1" style="display:none;">Username or Password incorrect!</p>
+		<p id="error2" style="display:none;">Fill in all fields!</p>
+		<p id="error3" style="display:none;">Can't connect to server...</p>
+		
+		
+	
+	
+	</div>
+
+
+
+</body>
+</rml>
