@@ -114,7 +114,7 @@ class GameServer(ShowBase):
 #----------------------------------------------------------------------#
         ### SETUP NETWORKING ###
         self.network = Network(self)
-        print "Network Loaded"
+        print "Network Loaded..."
         
 #----------------------------------------------------------------------#
 # SERVER NETWORKING END

@@ -141,12 +141,15 @@ class Network():
         # TCP
         taskMgr.add(self.tcpListenerTask, "Server_tcpListenerTask", -40)
         logging.info('TCP Listener Started')
+        print "TCP: Listening"
         taskMgr.add(self.tcpReaderTask, "Server_tcpReaderTask", -39)
         logging.info('TCP Reader Started')
+        print "TCP: Reading"
         
         # UDP
         taskMgr.add(self.udpReaderTask, "Server_udpReaderTask", -39)
         logging.info('UDP Reader Started')
+        print "UDP: Reading"
 #----------------------------------------------------------------------#
 # NETWORK TASK MANAGER STARTUP END
 #----------------------------------------------------------------------#

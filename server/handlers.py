@@ -106,10 +106,16 @@ class Handler():
         
         except:
             print "Can't connected to ACCOUNT DATABASE"
-            
+        
+        # Will make some other checks later... this is just good for now..
+        if details == None:
+            flag = 2
+            print "Player: ", clientUser, " Doesn't exist!"
+            loginTries += 1
             
         # Check if the password/username match
-        if clientPass == details[2] and clientUser == details[1]:
+        elif clientPass == details[2] and clientUser == details[1]:
+            print details
             userpass = True
             self.baseNet.base.PLAYERS[details[0]] = Player(self, details[0], details[1])
             print "Player: ", details[1], " Logged in, ID: ", details[0]
