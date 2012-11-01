@@ -100,6 +100,7 @@ class Handler():
         # Send the packet
         self.network.tcpWriter.send(pkg, self.tcpConn)
         
+        
     
     def handleAuth_Response(self, opcode, data):
         """
@@ -110,9 +111,14 @@ class Handler():
         flag = data.getUint16()
         
         # Do a check
+        if flag == 0:
+            print "Username doesn't exist!"
+            self.network.game.gui.login_gui.popError4()
+            
         if flag == 2:
             print "Login incorrect..."
             # Update the login screen with a msg.
+            self.network.game.gui.login_gui.popError1()
         
         if flag == 1:
             print "Login successful"

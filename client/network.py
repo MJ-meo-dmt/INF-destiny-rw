@@ -111,15 +111,6 @@ class Network():
         self.udpWriter = ConnectionWriter(self.udpManager, 0)
         
         
-        ### SETUP HANDLER INSTANCE ###
-        self.handler = Handler(self)
-        self.gameHandler = GameHandler(self)
-        
-        
-        ### SETUP HANDLERS DICT ###
-        self.HandlerDict = {}
-        
-        
         ### SETUP NETWORKING TASKS ###
         
         # TCP ReaderTask
@@ -243,23 +234,44 @@ class Network():
 #----------------------------------------------------------------------#
 # NETWORK TASKS UDP END
 #----------------------------------------------------------------------#
+
+    def makeHandlers(self):
+        
+        ### SETUP HANDLER INSTANCE ###
+        self.handler = Handler(self)
+        self.gameHandler = GameHandler(self)
+        
+        ### SETUP HANDLERS DICT ###
+        self.HandlerDict = {
+            SMSG_AUTH_RESPONSE    : self.handler.handleAuth_Response
+        }
  
  
-    def doLogin(self):
+    def makeConnection(self):
         """
         Handle the login state for the client when the player enters
         the user/pass info
         """
-        try:
-            self.LOGGED = True
-            self.tcpConnection = self.tcpManager.openTCPClientConnection(IP, tcpPORT, TIMEOUT)
-            self.tcpReader.addConnection(self.tcpConnection)
-            print "Connected"
-            # Add something here to change the status text in the login screen
+        
+        if self.LOGGED == True:
+            pass
+                
+        else:
+            try:
+                print "Connecting..."
+                self.tcpConnection = self.tcpManager.openTCPClientConnection(IP, tcpPORT, TIMEOUT)
+                self.tcpReader.addConnection(self.tcpConnection)
             
-        except:
-            self.LOGGED = False
-            print "Connection to server failed, Server offline..."
+                # Start the Handlers
+                self.makeHandlers()
+            
+                self.LOGGED = True
+                
+            
+            except:
+                print "Connection to server failed, Server offline..."
+                self.game.gui.login_gui.popError3()
+                self.LOGGED = False
 
 
 

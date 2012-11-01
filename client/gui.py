@@ -51,7 +51,7 @@ class Gui():
 	
 	def __init__(self, _base):
 		
-		self.base = _base
+		self.game = _base
 				
 		## Load a font type ##
 		LoadFontFace("gui_data/Delicious-Roman.otf")
@@ -120,6 +120,8 @@ class Login(DirectObject):
 		status = self.login_gui.GetElementById('error3')
 		status.style.display = "none"
 		
+		status = self.login_gui.GetElementById('error4')
+		status.style.display = "none"
 		
 		status = self.login_gui.GetElementById('error1')
 		status.style.display = "block"
@@ -130,6 +132,9 @@ class Login(DirectObject):
 		status.style.display = "none"
 		
 		status = self.login_gui.GetElementById('error3')
+		status.style.display = "none"
+		
+		status = self.login_gui.GetElementById('error4')
 		status.style.display = "none"
 		
 		status = self.login_gui.GetElementById('error2')
@@ -143,23 +148,40 @@ class Login(DirectObject):
 		status = self.login_gui.GetElementById('error2')
 		status.style.display = "none"
 		
+		status = self.login_gui.GetElementById('error4')
+		status.style.display = "none"
+		
 		status = self.login_gui.GetElementById('error3')
+		status.style.display = "block"
+		
+	# Username Doesn't exist
+	def popError4(self):
+		status = self.login_gui.GetElementById('error1')
+		status.style.display = "none"
+		
+		status = self.login_gui.GetElementById('error2')
+		status.style.display = "none"
+		
+		status = self.login_gui.GetElementById('error3')
+		status.style.display = "none"
+		
+		status = self.login_gui.GetElementById('error4')
 		status.style.display = "block"
 
 	def loginAttempt(self, user, passw):
 		
 		# Try login
-		if user or passw == "":
+		if user == "":
+			self.popError2()
+		elif passw == "":
 			self.popError2()
 		
-		else:
-			try:
-				print user, passw
-				self.gui.base.NetworkBase.handler.auth_REQ(user, passw)
+		elif user and passw != "":
+			
+			print "Attemting Login..."
+			self.gui.game.NetworkBase.makeConnection()
+			self.gui.game.NetworkBase.handler.auth_REQ(user, passw)
 				
-			except:
-				print user, passw
-				print "Failed"
 
 	def remove(self):
 		

@@ -33,6 +33,7 @@ def Log():
 	
 	<div class="Statusbox" >
 		<p id="error1" style="display:none;">Username or Password incorrect!</p>
+		<p id="error4" style="display:none;">Username doesn't exist!</p>
 		<p id="error2" style="display:none;">Fill in all fields!</p>
 		<p id="error3" style="display:none;">Can't connect to server...</p>
 		
