@@ -12,6 +12,6 @@ Regarding any logging errors, make sure you have a logs folder setup and make su
 
 Info:
 The basic test usernames and passwords:
-user1 : pass1
-user2 : pass2
+user1 : pass1,
+user2 : pass2,
 user3 : pass3
