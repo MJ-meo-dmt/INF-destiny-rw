@@ -247,7 +247,7 @@ class Network():
         }
  
  
-    def makeConnection(self):
+    def makeConnection(self, user, passw):
         """
         Handle the login state for the client when the player enters
         the user/pass info
@@ -264,6 +264,8 @@ class Network():
             
                 # Start the Handlers
                 self.makeHandlers()
+                
+                self.handler.auth_REQ(user, passw)
             
                 self.LOGGED = True
                 

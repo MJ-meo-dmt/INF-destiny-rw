@@ -123,7 +123,8 @@ class Handler():
         if flag == 1:
             print "Login successful"
             # Move to the main menu
-        
+            self.network.game.gui.removeLogin()
+            self.network.game.gui.load_Main_menu()
 
 
 #----------------------------------------------------------------------#

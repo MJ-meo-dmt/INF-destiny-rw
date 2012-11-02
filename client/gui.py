@@ -103,7 +103,7 @@ class Login(DirectObject):
 		self.gui = _Gui
 		
 		# Setup Login Screen gui
-		self.login_gui = self.gui.context.LoadDocument('gui_data/login.rml')
+		self.login_gui = self.gui.context.LoadDocument('gui_data/login_data/login.rml')
 		self.login_gui.Show()
 		
 		## LISTEN FOR EVENTS ##
@@ -179,8 +179,8 @@ class Login(DirectObject):
 		elif user and passw != "":
 			
 			print "Attemting Login..."
-			self.gui.game.NetworkBase.makeConnection()
-			self.gui.game.NetworkBase.handler.auth_REQ(user, passw)
+			self.gui.game.NetworkBase.makeConnection(user, passw)
+			
 				
 
 	def remove(self):
@@ -201,7 +201,7 @@ class Main_menu():
 		
 		self.gui = _Gui
 		
-		self.menu_gui = self.gui.context.LoadDocument('gui_data/main_menu.rml')
+		self.menu_gui = self.gui.context.LoadDocument('gui_data/menu_data/main_menu.rml')
 		self.menu_gui.Show()
 		
 		
