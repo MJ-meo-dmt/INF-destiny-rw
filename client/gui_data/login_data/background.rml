@@ -1,0 +1,16 @@
+<template name="background_template" content="">
+	<head>
+		<style>
+			body
+			{
+				
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+			<img src="../gui_images/login_images/Background_login.png"></img>
+	</body>
+</template>

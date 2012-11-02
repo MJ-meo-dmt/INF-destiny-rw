@@ -1,0 +1,191 @@
+/* MAIN MENU RCSS DOC */
+
+/* Basics */
+body {
+    background-decorator: image;
+	background-image: ../gui_images/menu_images/Background.png;
+	z-index: -1;
+	width: 100%; 
+	height: 100%; 
+	margin: auto;
+	font-family:Delicious;
+}
+
+/* Setup the menuBox */
+.menuBox {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/menu_box.png;
+    z-index: 2;
+    position: absolute;
+    width: 153px;
+    height: 179px;
+    top:240px;
+    left:100px;
+}
+
+/* -----------    menuBox buttons  ----------------------*/
+
+/* enter game btn */
+.enter_btn {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/entergame_btn.png;
+    width:113px;
+    height:21px;
+    float:left;
+    margin-left:20px;
+    margin-top:60px;
+}
+
+.enter_btn:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/entergame_btn_hover.png;
+    margin-left:26px;
+}
+
+/* settings btn */
+.settings_btn {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/settings_btn.png;
+    width:113px;
+    height:21px;
+    float:left;
+    margin-left:20px;
+    margin-top:7px;
+}
+
+.settings_btn:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/settings_btn_hover.png;
+    margin-left:26px;
+    margin-top:7px;
+}
+
+/* logout btn */
+.logout_btn {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/logout_btn.png;
+    width:113px;
+    height:21px;
+    float:left;
+    margin-left:20px;
+    margin-top:9px;
+}
+
+.logout_btn:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/logout_btn_hover.png;
+    margin-left:26px;
+}
+
+/* -----------    menuBox buttons end  ----------------------*/
+
+
+/* -----------    ship select box      ----------------------*/
+
+.selectBox {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/select_box.png;
+    z-index: 2;
+    position: absolute;
+    width: 199px;
+    height: 46px;
+    top:560px;
+    left:600px; 
+}
+
+.arrow_left {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/arrow_left.png;
+    width:30px;
+    height:26px;
+    float:left;
+    margin-left:10px;
+    margin-top:10px;
+}
+
+.arrow_left:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/arrow_left_hover.png;
+}
+
+.select_btn {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/select_btn.png;
+    width:113px;
+    height:21px;
+    float:left;
+    margin-left:3px;
+    margin-top:13px;
+}
+
+.select_btn:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/select_btn_hover.png;
+}
+
+.arrow_right {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/arrow_right.png;
+    width:30px;
+    height:26px;
+    float:left;
+    margin-left:3px;
+    margin-top:10px;
+}
+
+.arrow_right:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/arrow_right_hover.png;
+}
+
+/* -----------    ship select box END  ---------------------*/
+
+
+/* -----------    ship select area     ----------------------*/
+
+/* ship_select */
+.ship_view {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/ship_view.png;
+    z-index: 2;
+    position: absolute;
+    width: 325px;
+    height: 124px;
+    top:400px;
+    left:536px;
+}
+
+.create_btn {
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/create_btn.png;
+    width:113px;
+    height:61px;
+    float:left;
+    margin-left:110px;
+    margin-top:25px;
+}
+
+.create_btn:hover
+{
+    background-decorator: image;
+    background-image: ../gui_images/menu_images/create_btn_hover.png;
+    height:63px;
+    margin-top:25px;
+}
+
+
+/* -----------    ship select area END   ---------------------*/
+
+
+
+
+
+
+
+

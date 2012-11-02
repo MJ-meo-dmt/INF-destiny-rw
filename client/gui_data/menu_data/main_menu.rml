@@ -1,0 +1,40 @@
+<rml>
+	<head>
+		<link type="text/rcss" href="menu_art.rcss"/>
+		
+		
+
+<title>Main menu</title>
+
+
+	<script>
+
+	</script>
+
+</head>
+
+<body>
+	
+    <!-- menuBox setup -->
+	<div class="menuBox">
+        <p class="enter_btn"></p>
+        <p class="settings_btn"></p>
+        <p class="logout_btn"></p>
+	</div>
+	<!-- menuBox setup END -->
+    
+    <!-- selection area setup -->
+    <div class="ship_view">
+        <p class="create_btn"></p>
+    </div>
+    
+    <div class="selectBox">
+        <p class="arrow_left"></p>
+        <p class="select_btn"></p>
+        <p class="arrow_right"></p>
+    </div>
+    <!-- selection area END -->
+
+</body>
+</rml>
+
