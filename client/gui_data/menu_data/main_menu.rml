@@ -7,9 +7,11 @@
 <title>Main menu</title>
 
 
-	<script>
+<script>
+def playSoundover():
+    
 
-	</script>
+</script>
 
 </head>
 
