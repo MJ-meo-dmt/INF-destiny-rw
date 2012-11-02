@@ -9,7 +9,9 @@
 
 <script>
 def playSoundover():
-    
+    click = base.loader.loadSfx("gui_data/audio/click.ogg")
+    click.setVolume(0.4)
+    click.play()
 
 </script>
 
@@ -19,21 +21,21 @@ def playSoundover():
 	
     <!-- menuBox setup -->
 	<div class="menuBox">
-        <p class="enter_btn"></p>
-        <p class="settings_btn"></p>
-        <p class="logout_btn"></p>
+        <p class="enter_btn" onmouseover="playSoundover()"></p>
+        <p class="settings_btn" onmouseover="playSoundover()"></p>
+        <p class="logout_btn" onmouseover="playSoundover()"></p>
 	</div>
 	<!-- menuBox setup END -->
     
     <!-- selection area setup -->
     <div class="ship_view">
-        <p class="create_btn"></p>
+        <p class="create_btn" onmouseover="playSoundover()"></p>
     </div>
     
     <div class="selectBox">
-        <p class="arrow_left"></p>
-        <p class="select_btn"></p>
-        <p class="arrow_right"></p>
+        <p class="arrow_left" onmouseover="playSoundover()"></p>
+        <p class="select_btn" onmouseover="playSoundover()"></p>
+        <p class="arrow_right" onmouseover="playSoundover()"></p>
     </div>
     <!-- selection area END -->
 
