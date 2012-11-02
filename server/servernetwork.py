@@ -170,7 +170,7 @@ class Network():
             rendezvous = PointerToConnection()
             netAddress = NetAddress()
             newConnection = PointerToConnection()
-                
+            
             if self.tcpListener.getNewConnection(rendezvous, netAddress, newConnection):
                 newConnection = newConnection.p()
                 

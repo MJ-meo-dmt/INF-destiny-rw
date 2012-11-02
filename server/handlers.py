@@ -86,6 +86,7 @@ class Handler():
         """
         Handle auth and player login.
         NOTE: THIS IS REALLY SIMPLE FOR NOW
+        Add something to check if the user is already logged in
         """
         
         # Get the data the client sent.
@@ -110,7 +111,7 @@ class Handler():
         # Will make some other checks later... this is just good for now..
         if details == None:
             flag = 2
-            print "Player: ", clientUser, " Doesn't exist!"
+            print "Player: ", clientUser, " Doesn't exist! or Incorrect!"
             loginTries += 1
             
         # Check if the password/username match
