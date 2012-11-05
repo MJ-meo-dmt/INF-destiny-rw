@@ -243,7 +243,8 @@ class Network():
         
         ### SETUP HANDLERS DICT ###
         self.HandlerDict = {
-            SMSG_AUTH_RESPONSE    : self.handler.handleAuth_Response
+            SMSG_AUTH_RESPONSE       : self.handler.handleAuth_Response,
+            SMSG_DISCONNECT_ACK : self.handler.handleDisconnect_ACK
         }
  
  

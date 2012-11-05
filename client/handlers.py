@@ -125,7 +125,32 @@ class Handler():
             # Move to the main menu
             self.network.game.gui.removeLogin()
             self.network.game.gui.load_Main_menu()
-
+            
+    
+    def handleDisconnect_REQ(self):
+        """
+        Handle the disconnection cleanly. well... 
+        """
+        # Create buffer
+        pkg = PyDatagram()
+        
+        # Added opcode
+        pkg.addUint16(CMSG_DISCONNECT_REQ)
+        
+        # Send packet
+        self.network.tcpWriter.send(pkg, self.tcpConn)
+        print "sent dc req..."
+        
+    def handleDisconnect_ACK(self, opcode, data):
+        """
+        Handle the client exit
+        """
+        # Close and remove the connection
+        self.network.tcpManager.closeConnection(self.network.tcpConnection)
+        
+        # Close the app / this may move
+        sys.exit()
+        print "Exit Game..."
 
 #----------------------------------------------------------------------#
 # HANDLER END

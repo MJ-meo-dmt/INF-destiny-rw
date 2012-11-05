@@ -195,7 +195,7 @@ class Login(DirectObject):
 # GUI - MAIN MENU
 #----------------------------------------------------------------------#
 
-class Main_menu():
+class Main_menu(DirectObject):
 	
 	def __init__(self, _Gui):
 		
@@ -204,7 +204,12 @@ class Main_menu():
 		self.menu_gui = self.gui.context.LoadDocument('gui_data/menu_data/main_menu.rml')
 		self.menu_gui.Show()
 		
+		# Get event for DC_REQ: Exit app
+		self.accept('DC_REQ', self.doExit)
 		
+		
+	def doExit(self):
+		self.gui.game.NetworkBase.handler.handleDisconnect_REQ()
 
 
 

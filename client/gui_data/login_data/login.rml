@@ -13,7 +13,6 @@ def Log():
 	user = document.GetElementById('username')
 	passw = document.GetElementById('password')
 	messenger.send('Login_attempt', [user.value, passw.value])
-
 	</script>
 
 </head>

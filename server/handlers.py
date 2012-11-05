@@ -77,7 +77,7 @@ class Handler():
     def __init__(self, _baseNet):
         
         logging.info('Handler Loaded')
-        self.baseNet = _baseNet
+        self.network = _baseNet
         
 #----------------------------------------------------------------------#
 # HANDLE AUTH
@@ -118,7 +118,7 @@ class Handler():
         elif clientPass == details[2] and clientUser == details[1]:
             print details
             userpass = True
-            self.baseNet.base.PLAYERS[details[0]] = Player(self, details[0], details[1])
+            self.network.base.PLAYERS[details[0]] = Player(self, details[0], details[1])
             print "Player: ", details[1], " Logged in, ID: ", details[0]
             flag = 1
                 
@@ -138,7 +138,7 @@ class Handler():
         pkg.addUint16(flag)
         
         # Send the packet
-        self.baseNet.tcpWriter.send(pkg, client)
+        self.network.tcpWriter.send(pkg, client)
             
             
 #----------------------------------------------------------------------#
@@ -147,6 +147,8 @@ class Handler():
     def handleDisconnect(self, opcode, data, client):
         """
         Handle disconnection for clients.
+        
+        Save the player data aswell to the DB
         """
         # create buffer
         pkg = PyDatagram()
@@ -155,13 +157,13 @@ class Handler():
         pkg.addUint16(SMSG_DISCONNECT_ACK)
         
         # Send the packet
-        self.baseNet.tcpWriter.send(pkg, client)
-        self.baseNet.base.ACTIVECON.remove(client)
+        self.network.tcpWriter.send(pkg, client)
+        self.network.base.ACTIVECON.remove(client)
         logging.info("Client: %s, Disconnected", client)
         print "Client: %s, Disconnected" % client
         
         # Remove the connection from the tcpReader
-        self.baseNet.tcpReader.removeConnection(client)
+        self.network.tcpReader.removeConnection(client)
         
 
 #----------------------------------------------------------------------#

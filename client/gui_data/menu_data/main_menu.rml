@@ -13,6 +13,9 @@ def playSoundover():
     click.setVolume(0.4)
     click.play()
 
+def dcREQ():
+    print "Send REQ"
+    messenger.send('DC_REQ')
 </script>
 
 </head>
@@ -23,7 +26,7 @@ def playSoundover():
 	<div class="menuBox">
         <p class="enter_btn" onmouseover="playSoundover()"></p>
         <p class="settings_btn" onmouseover="playSoundover()"></p>
-        <p class="logout_btn" onmouseover="playSoundover()"></p>
+        <p class="logout_btn" onclick="dcREQ()" onmouseover="playSoundover()"></p>
 	</div>
 	<!-- menuBox setup END -->
     
